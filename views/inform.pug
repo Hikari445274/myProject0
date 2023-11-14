@@ -1,0 +1,111 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  script(src='https://kit.fontawesome.com/1ad9241671.js' crossorigin='anonymous')
+  script(src='https://cdn.tailwindcss.com')
+// Nav bar
+nav.bg-black.sticky.top-0
+  .container.mx-auto.flex.justify-between.h-20.items-center.text-white
+    .flex
+      // <img src="./bRook.png" alt="" class="w-20 bg-white rounded-full">
+      .text-3xl.font-bold.text-center.align-middle.h-full
+        | MARIANA
+    .flex
+      .ml-6(class='hover:text-blue-400') Home
+      .ml-6(class='hover:text-blue-400') Boat
+      .ml-6(class='hover:text-blue-400') Yatch
+      .ml-6(class='hover:text-blue-400') Blog
+      .ml-6(class='hover:text-blue-400') Contact
+      .ml-6(class='hover:text-blue-400')
+        i.fas.fa-search
+// Nav bar end
+each yatch in yatchs
+  section.container.mx-auto.my-4
+    .text-center.mb-4
+      .text-2xl.font-bold.font-narrow
+        | YATCH INFORMATION
+      div This is the thing you have chosen
+    .flex
+      .bg-blue-100.mr-2.p-2.rounded-lg(class='basis-1/2')
+        img.aspect-video.object-cover(src=yatch.yatch_img alt='')
+      .bg-blue-100.mr-2.p-2.rounded-lg.grid.grid-cols-2(class='basis-1/2')
+        .font-bold Name:
+        div #{yatch.yatch_name}
+        .font-bold Kind:
+        div #{yatch.yatch_kind}
+        .font-bold Length:
+        div #{yatch.yatch_length}
+        .font-bold L&#x1B0;&#x1EE3;ng gi&atilde;n n&#x1B0;&#x1EDB;c:
+        div (lgn)
+        .font-bold C&ocirc;ng su&#x1EA5;t:
+        div (congsuat)
+        .font-bold T&#x1EA3;i tr&#x1ECD;ng:
+        div (taitrong)
+        .font-bold Price:
+        div #{yatch.yatch_price}
+  .container.my-2.p-2.bg-blue-100.mx-auto.rounded-lg
+    .text-2xl.font-bold.text-center
+      | Description
+    div #{yatch.yatch_desc}
+  section.container.mx-auto
+    div
+      | Comment:
+footer.bg-gray-400
+  .flex.flex-col
+    .container.mx-auto.flex.items-center.py-8
+      .text-2xl.text-white.font-bold(class='basis-1/2')
+        | SUBSCRIBE NEWSLETTER
+      .flex(class='basis-1/2')
+        input.h-12.rounded-lg.mx-2(type='text' placeholder='Email Address' class='basis-4/5')
+        button.bg-orange-500.h-12.rounded-lg.mx-2(type='submit' class='hover:bg-orange-600 basis-1/5')
+          i.fa.fa-paper-plane-o
+    .bg-gray-100(class='h-0.5')
+    .flex.h-80.container.mx-auto.py-4
+      .font-bold.text-2xl.text-white(class='basis-1/4') Marina
+      .text-white.px-2(class='basis-1/4')
+        .text-xl.font-bold.pb-2
+          | Contact Info
+        .flex.items-center
+          button.bg-blue-500.h-10.w-10.shrink-0.rounded-full(class='hover:bg-orange-600')
+            i.fas.fa-map-marker
+          div
+            | 123 xyz.st Ha Noi, Viet Nam
+        .flex.items-center
+          button.bg-blue-500.h-10.w-10.shrink-0.rounded-full(class='hover:bg-orange-600')
+            i.fas.fa-envelope
+          div
+            | info@loremipsum.com
+        .flex.items-center
+          button.bg-blue-500.h-10.w-10.shrink-0.rounded-full(class='hover:bg-orange-600')
+            i.fas.fa-phone
+          div
+            | +84224567890
+        .flex.items-center
+          button.bg-blue-500.h-10.w-10.shrink-0.rounded-full(class='hover:bg-orange-600')
+            i.fas.fa-mobile
+        div
+          button.bg-blue-500.h-10.w-10.rounded-full(class='hover:bg-orange-600')
+            i.fas.fa-fax
+        div
+      .font-bold.text-white(class='basis-1/4')
+        .text-xl
+          div
+            | Useful Link
+      .font-bold.text-xl.text-white(class='basis-1/4')
+        div
+          | Our Gallery
+        img.p-2(src='./Kashtira.Arise-Heart.600.3863020.jpg' alt='')
+        img.p-2(src='./Kashtira.Arise-Heart.600.3863020.jpg' alt='')
+    .bg-gray-100(class='h-0.5')
+    .flex.justify-end.items-center.py-4.container.mx-auto
+      button.bg-blue-500.h-12.w-12.items-center(class='hover:bg-orange-600')
+        i.fa.fa-facebook-f(style='font-size:24px')
+      button.bg-blue-500.h-12.w-12.ml-2.items-center(class='hover:bg-orange-600')
+        i.fa.fa-twitter(style='font-size:24px')
+      button.bg-blue-500.h-12.w-12.ml-2.items-center(class='hover:bg-orange-600')
+        i.fa.fa-instagram(style='font-size:24px')
+      button.bg-blue-500.h-12.w-12.ml-2.items-center(class='hover:bg-orange-600')
+        i.fa.fa-github(style='font-size:24px')
+      button.bg-blue-500.h-12.w-12.ml-2.items-center(class='hover:bg-orange-600')
+        i.fa.fa-youtube-play(style='font-size:24px')

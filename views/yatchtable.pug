@@ -1,0 +1,60 @@
+extends layout 
+block content 
+    section.flex.flex-col
+        div.text-xl.text-center Yatch Management 
+        div.p-2 This is the place where you add new yatch, update yatch information, or even delete the yatch
+        div.border.border-gray-300.bg-white.m-2
+            div.bg-gray-200.border-b.border-gray-300.text-blue-500.font-bold.py-2.pl-4 Boat Management
+            div.py-2.pl-4 Thông tin thuyền hiện tại đang có
+            div.yatch
+                table.table-fixed.w-full.border.border-gray-400.my-4
+                    thead
+                        tr.bg-gray-300.border-b.border-gray-400
+                            th.w-12 ID
+                            th Name
+                            th Origin
+                            th Kind
+                            th Price
+                            th.w-18 Action
+                    tbody
+                    each yatch in yatchs
+                        tr 
+                            td= yatch.yatch_id
+                            td= yatch.yatch_name
+                            td= yatch.yatch_origin
+                            td= yatch.yatch_kind 
+                            td= yatch.yatch_price
+            button(onclick="updateYatch()" class='hover:bg-orange-600').bg-sky-500.px-4.py-2.rounded-lg
+                i.fa.fa-edit
+            button(onclick="deleteYatch()" class='hover:bg-orange-600').bg-yellow-500.px-4.py-2.rounded-lg
+                i.fa.fa-trash-o
+            dialog#updateYatch(class="border border-gray-400 rounded-lg bg-white")
+                form(action="yatchchoose", method="post")
+                    |Update yatch whose ID is: 
+                    input(type="text" name="choose" placeholder="Yatch ID")
+                    button(type="submit") Update the yatch!
+            dialog#deleteYatch(class="border border-gray-400 rounded-lg bg-white")
+                form(action="yatchdelete", method="post")
+                    | Delete yatch whose ID is: 
+                    input(type="text" name="delete" placeholder="Yatch ID")
+                    button(type="submit") Delete the yatch!
+            script.
+                function updateYatch() {
+                    const element = document.getElementById("updateYatch");
+                    element.open = !element.open;
+                }
+                function deleteYatch() {
+                    const element = document.getElementById("deleteYatch");
+                    element.open = !element.open;
+                }
+            form(action="/yatchaddcomplete" method='post' class='flex flex-col')
+                div(class='bg-gray-200 p-2') Nhập thông tin của thuyền mới vào đây 
+                div(class='flex w-full')
+                    input(type="text" name="name" placeholder="Yatch Name" class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg')
+                    input(type="text" name="origin" placeholder="Yatch Origin" class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg')
+                    input(type="number" name="price" placeholder="Yatch Price" class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg')
+                    input(type="text" name="kind" placeholder="Yatch Kind" class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg') 
+                    input(type="number" name="length" placeholder="Yatch Length" class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg') 
+                    input(type="text" name="img" placeholder="Yatch Image" class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg') 
+                input(type="textarea" name="desc" placeholder="Some Description (max 255 character)").border.border-gray-300.m-2.p-2.rounded-lg
+                button(type="submit" class='border border-gray-400 bg-blue-200 hover:bg-blue-500 m-2 p-2 rounded-lg') Add another yatch ? 

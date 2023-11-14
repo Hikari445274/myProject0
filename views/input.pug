@@ -1,0 +1,7 @@
+extends layout 
+block content
+  p Your name ?
+  form(action='./hello' method='post')
+    input#name(type='text' name='name')
+    input#age(type='text' name='age')
+    button(type='submit') Send 

@@ -1,0 +1,29 @@
+extends layout 
+block content 
+    section.flex.flex-col
+        div.flex.flex-col
+            div.text-xl.text-center Yatch Management 
+            div This is the place where you add new yatch, update yatch information, or even delete the yatch
+        div.border.border-gray-300.bg-white 
+            div.bg-gray-200.border-b.border-gray-300.pl-4.text-blue-500.font-bold.py-2 Boat Management
+        each yatch in yatchs
+            form(action="/yatchupdate" method='post' class='flex flex-col')
+                div(class='flex flex-row')
+                    div(class='flex flex-col basis-1/2')
+                        div Đây là thông tin cũ
+                        input(type="text" name="id" value=yatch.yatch_id style="display: none")
+                        input(type="text" name="name1" value=yatch.yatch_name class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg')
+                        input(type="text" name="origin1" value=yatch.yatch_origin class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg')
+                        input(type="text" name="price1" value=yatch.yatch_price class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg')
+                        input(type="text" name="length1" value=yatch.yatch_length class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg')
+                        input(type="text" name="kind1" value=yatch.yatch_kind class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg')
+                        input(type="url" name="img1" value=yatch.yatch_img class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg')
+                    div(class='flex flex-col basis-1/2')
+                        div Nhập thông tin mới của thuyền vào đây 
+                        input(type="text" name="name2" placeholder="Yatch Name" class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg')
+                        input(type="text" name="origin2" placeholder="Yatch Origin" class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg')
+                        input(type="number" name="price2" placeholder="Yatch Price" class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg')
+                        input(type="text" name="price2" placeholder="Yatch Length" class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg')
+                        input(type="text" name="kind2" placeholder="Yatch Kind" class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg') 
+                        input(type="url" name="img2" placeholder="Copy New Image URL Here" class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg') 
+                button(type="submit" class='border border-gray-400 bg-blue-200 hover:bg-blue-500 m-2 p-2 rounded-lg') Update this yatch ?
