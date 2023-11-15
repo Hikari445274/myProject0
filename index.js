@@ -7,7 +7,7 @@ import app from "./app";
 import http from "http";
 import mysql from 'mysql2';
 
-var port = 3006;
+var port = 3002;
 app.set('port', port);
 
 
