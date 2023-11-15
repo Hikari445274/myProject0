@@ -21,6 +21,7 @@ block content
                         tr 
                             td= yatch.yatch_id
                             td= yatch.yatch_name
+                            td= yatch.yatch_year 
                             td= yatch.yatch_origin
                             td= yatch.yatch_kind 
                             td= yatch.yatch_price
@@ -51,6 +52,7 @@ block content
                 div(class='bg-gray-200 p-2') Nhập thông tin của thuyền mới vào đây 
                 div(class='flex w-full')
                     input(type="text" name="name" placeholder="Yatch Name" class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg')
+                    input(type="text" name="year" placeholder="Yatch Year" class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg')
                     input(type="text" name="origin" placeholder="Yatch Origin" class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg')
                     input(type="number" name="price" placeholder="Yatch Price" class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg')
                     input(type="text" name="kind" placeholder="Yatch Kind" class='border border-gray-300 basis-1/6 m-2 p-2 rounded-lg') 

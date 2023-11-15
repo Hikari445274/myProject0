@@ -20,7 +20,7 @@ router.post('/hello', function(req, res) {
   res.render('hello', {name: req.body.name, age: req.body.age});
 } )
 router.post('/yatchaddcomplete', function(req,res,next) {
-  addYatch(req.body.name,req.body.origin,req.body.price,req.body.kind)
+  addYatch(req.body.name,req.body.origin,req.body.price,req.body.kind,req.body.year,req.body.length,req.body.img)
   res.render('yatchaddcomplete')
 })
 router.post('/yatchdelete', function(req,res, next){
@@ -81,20 +81,22 @@ router.get('/yatchtable', function(req,res) {
         });
     });
 })
-
 router.get('/sanpham',function(req,res){
   let page = parseInt(req.query.page)
   var sql='SELECT * FROM yatch';
-    con.query(sql, function (err,yatch,fields,) {
+    con.query(sql, function (err,yatch,fields) {
       if (err) throw err
-      let pageCount = Math.ceil(yatch.length / 10) // số page tối đa = số sp / số sp tối đa trong page
+      let pageCount = Math.ceil(yatch.length / 8) // số page tối đa = số sp / số sp tối đa trong page
       if (page <1 || !page) {
         page =1
       }
       if (page > pageCount) {
           page = pageCount
       }
-      res.render("sanpham",{yatchs:yatch.slice(page * 10 - 10, page * 10)})
+      console.log(yatch.slice(page * 8 - 8, page * 8))
+      console.log(page)
+      console.log(pageCount)
+      res.render("sanpham",{yatchs:yatch.slice(page*8-8,page*8)})
     });
 })
 export default router;

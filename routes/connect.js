@@ -9,13 +9,13 @@ export const con = dtb.createConnection({
     port: 3308
 })
 
-export function addYatch (name, origin, price, kind) {
+export function addYatch (name, origin, price, kind, year, length, img) {
     con.connect(function(err) {
         console.log(err);
     if (err) throw err;
-    var sql = `INSERT INTO yatch (yatch_name, yatch_origin, yatch_price, yatch_kind) VALUES (?,?,?,?)`;
+    var sql = `INSERT INTO yatch (yatch_name, yatch_origin, yatch_price, yatch_kind, yatch_year, yatch_length, yatch_img) VALUES (?,?,?,?,?,?,?)`;
     console.log(sql);
-    con.query(sql,[name,origin,price,kind],function(err,result){
+    con.query(sql,[name,origin,price,kind,year,length,img],function(err,result){
         if (err) throw err;
         console.log("Yatch Insert Complete!")
     })

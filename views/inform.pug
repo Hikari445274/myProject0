@@ -36,31 +36,18 @@ each yatch in yatchs
         div #{yatch.yatch_kind}
         .font-bold Length:
         div #{yatch.yatch_length}
-        .font-bold L&#x1B0;&#x1EE3;ng gi&atilde;n n&#x1B0;&#x1EDB;c:
-        div (lgn)
-        .font-bold C&ocirc;ng su&#x1EA5;t:
-        div (congsuat)
-        .font-bold T&#x1EA3;i tr&#x1ECD;ng:
-        div (taitrong)
+        .font-bold Origin:
+        div #{yatch.yatch_origin}
+        .font-bold Year:
+        div #{yatch.yatch_year}
         .font-bold Price:
         div #{yatch.yatch_price}
   .container.my-2.p-2.bg-blue-100.mx-auto.rounded-lg
     .text-2xl.font-bold.text-center
       | Description
     div #{yatch.yatch_desc}
-  section.container.mx-auto
-    div
-      | Comment:
 footer.bg-gray-400
   .flex.flex-col
-    .container.mx-auto.flex.items-center.py-8
-      .text-2xl.text-white.font-bold(class='basis-1/2')
-        | SUBSCRIBE NEWSLETTER
-      .flex(class='basis-1/2')
-        input.h-12.rounded-lg.mx-2(type='text' placeholder='Email Address' class='basis-4/5')
-        button.bg-orange-500.h-12.rounded-lg.mx-2(type='submit' class='hover:bg-orange-600 basis-1/5')
-          i.fa.fa-paper-plane-o
-    .bg-gray-100(class='h-0.5')
     .flex.h-80.container.mx-auto.py-4
       .font-bold.text-2xl.text-white(class='basis-1/4') Marina
       .text-white.px-2(class='basis-1/4')

@@ -1,46 +1,46 @@
-html
-    head
-        title= title
-        link(rel='stylesheet', href='/stylesheets/style.css')
-        script(src="https://cdn.tailwindcss.com")
-    body
-        section.flex.w-full
-            section.flex.flex-col.bg-blue-700.h-screen.text-white(class='basis-1/4')
-                div.border-b.border-gray-400.h-16.px-2
-                    img.max-w-10.max-h-10(src='./logo.jpeg' alt='')
-                div.flex.items-center.border-b.border-gray-400.px-2.h-10(class='hover:bg-blue-400')
-                    i.fa.fa-area-chart.mr-2
-                    div Dashboard
-                div.flex.items-center.border-b.border-gray-400.px-2.h-10(class='hover:bg-blue-400')
-                    i.fa.fa-user-edit.mr-2
-                    div Admin Information
-                div.border-b.border-gray-400.p-2
-                    div.pb-2 Business Management
-                        a(href="./yatchtable" class='hover:bg-blue-400 flex items-center mb-2')
-                            i.fas.fa-ship.mr-2
-                            div Boat Management
-                        div.flex.items-center.mb-2(class='hover:bg-blue-400')
-                            i.fas.fa-wheelchair.mr-2
-                            div Client Management
-                        div.flex.items-center.mb-2(class='hover:bg-blue-400')
-                            i.fas.fa-flag.mr-2
-                            div Tour Management
-                div.flex.border-b.border-gray-400.items-center.p-2.justify-center
-                    button.w-10.h-10.rounded-full.border.border-gray-300.bg-blue-200
-                        i.fas.fa-angle-left
-            section.(class='basis-3/4')
-                nav.flex.justify-between.sticky.top-0.h-16.px-4
-                    .flex.items-center.max-w-lg
-                        input.border.border-gray-300.rounded-lg.h-12(type='text' placeholder='Search for...')
-                        button.bg-blue-500.h-12.w-16.rounded-lg(class='hover:bg-orange-600')
-                            i.fas.fa-search(style='font-size:24px')
+doctype html
+head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://cdn.tailwindcss.com")
+body
+    section.flex.w-full
+        section.flex.flex-col.bg-blue-700.h-screen.text-white(class='basis-1/4')
+            div.border-b.border-gray-400.h-16.px-2
+                img.max-w-10.max-h-10(src='./logo.jpeg' alt='')
+            div.flex.items-center.border-b.border-gray-400.px-2.h-10(class='hover:bg-blue-400')
+                i.fa.fa-area-chart.mr-2
+                div Dashboard
+            div.flex.items-center.border-b.border-gray-400.px-2.h-10(class='hover:bg-blue-400')
+                i.fa.fa-user-edit.mr-2
+                div Admin Information
+            div.border-b.border-gray-400.p-2
+                div.pb-2 Business Management
+                    a(href="./yatchtable" class='hover:bg-blue-400 flex items-center mb-2')
+                        i.fas.fa-ship.mr-2
+                        div Boat Management
+                    div.flex.items-center.mb-2(class='hover:bg-blue-400')
+                        i.fas.fa-wheelchair.mr-2
+                        div Client Management
+                    div.flex.items-center.mb-2(class='hover:bg-blue-400')
+                        i.fas.fa-flag.mr-2
+                        div Tour Management
+            div.flex.border-b.border-gray-400.items-center.p-2.justify-center
+                button.w-10.h-10.rounded-full.border.border-gray-300.bg-blue-200
+                    i.fas.fa-angle-left
+        section.(class='basis-3/4')
+            nav.flex.justify-between.sticky.top-0.h-16.px-4
+                .flex.items-center.max-w-lg
+                    input.border.border-gray-300.rounded-lg.h-12(type='text' placeholder='Search for...')
+                    button.bg-blue-500.h-12.w-16.rounded-lg(class='hover:bg-orange-600')
+                        i.fas.fa-search(style='font-size:24px')
+                .flex.items-center
+                    .border-r.border-gray-400.flex
+                        button.pr-2
+                        i.fa.fa-bell
+                        button.pr-2
+                        i.fas.fa-envelope
                     .flex.items-center
-                        .border-r.border-gray-400.flex
-                            button.pr-2
-                            i.fa.fa-bell
-                            button.pr-2
-                            i.fas.fa-envelope
-                        .flex.items-center
-                            .px-1 Hikari Goeno
-                            img.max-h-10.max-w-10.border.border-gray-300.rounded-full(src='./bRook.png' alt='avatar')
-                block content
+                        .px-1 Hikari Goeno
+                        img.max-h-10.max-w-10.border.border-gray-300.rounded-full(src='./bRook.png' alt='avatar')
+            block content
