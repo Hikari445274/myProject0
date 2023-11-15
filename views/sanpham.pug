@@ -13,27 +13,27 @@ nav.bg-black.sticky.top-0
         .flex
             img(src="http://localhost:3002/images/duthuyen/lo1.png", alt="" class="items-center align-middle h-28 object-cover")
         .flex
-            a(href="" class='ml-6 hover:text-blue-400') Home
-            a(href="/sanpham?page=1" class='ml-6 hover:text-blue-400') Boat 
-            a(href="/sanpham?page=1" class='ml-6 hover:text-blue-400') Yatch 
-            a(href="" class='ml-6 hover:text-blue-400') Blog
-            a(href="" class='ml-6 hover:text-blue-400') Contact
-            a(href="" class='ml-6 hover:text-blue-400')  
+            a(href="" class='ml-8 hover:text-blue-400 text-xl') Home
+            a(href="/sanpham?page=1" class='ml-8 hover:text-blue-400 text-xl') Boat 
+            a(href="/sanpham?page=1" class='ml-8 hover:text-blue-400 text-xl') Yatch 
+            a(href="" class='ml-8 hover:text-blue-400 text-xl') Contact
+            a(href="" class='ml-8 hover:text-blue-400 text-xl') About Us
+            a(href="" class='ml-8 hover:text-blue-400 text-xl')  
                 i.fas.fa-search
 // Nav bar end
 // Display section
 section.flex.flex-row
     .container.mx-auto
         // San pham
-        .text-center.text-2xl.font-bold.py-4.font-mulish
+        .text-center.text-4xl.font-bold.pb-4.pt-8.font-mulish
             | FIND YOUR DESIRE YATCH HERE
-        .grid.grid-cols-2.gap-2.py-2
+        .grid.grid-cols-2.gap-2.py-4
             each yatch in yatchs
-                form(action="/inform", method="post").border.border-gray-300.p-2.rounded-lg
+                form(action="/inform", method="post").border.border-gray-300.p-4.rounded-lg
                     input#id(type="text" name="id" value=yatch.yatch_id style="display: none")
                     input(type='image' src=yatch.yatch_img alt='Submit' class="aspect-video object-cover w-full")
-                    .font-bold #{yatch.yatch_name}
-                    .flex
+                    .font-bold.py-2.pl-2.text-2xl #{yatch.yatch_name}
+                    .flex.py-2.pl-2
                         .border-r.border-gray-600.pr-2 
                             i.fa.fa-globe(class='pr-2')
                             | #{yatch.yatch_origin}
@@ -48,9 +48,7 @@ section.flex.flex-row
                             | #{yatch.yatch_price}
         // san pham end
         // Pagination
-        .flex.items-center.mb-4.mt-2.justify-between
-            div
-                | Result from #{page*8-7} to #{page*8}
+        .flex.items-center.mb-4.mt-2.justify-end
             nav(aria-label='Pagination')
                 ul.inline-flex.-space-x-px.text-base.h-10
                     li
